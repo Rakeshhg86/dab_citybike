@@ -1,0 +1,14 @@
+on: 
+  push:
+    branches:
+      - 'main'
+      - 'feature1/*
+jobs:
+  demo-job:
+    name: demo-job
+    runs-on: ubuntu-latest
+    steps:
+    -name: message1
+      run: echo "this is message1"
+    -name: message2
+      run: echo "this is message2"
