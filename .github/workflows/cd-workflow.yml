@@ -35,7 +35,7 @@ jobs:
           # write out the profile (here called "dev")
           cat <<EOF > ~/.databrickscfg
           [DEV]
-          host = your-databricks-workspace-url
+          host = https://adb-7405617671970223.3.azuredatabricks.net
           azure_tenant_id = ${{ secrets.AZURE_TENANT_ID }}
           azure_client_id = ${{ secrets.AZURE_CLIENT_ID }}
           azure_client_secret = ${{ secrets.AZURE_CLIENT_SECRET }}
