@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: message1
-        run: echo "this is message1"
+        run: echo "this is message11"
 
       - name: message2
         run: echo "this is message2"
