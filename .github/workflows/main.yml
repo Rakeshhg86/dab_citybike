@@ -1,3 +1,4 @@
+name: Demo Workflow
 on: 
   push:
     branches:
@@ -8,7 +9,7 @@ jobs:
     name: demo-job
     runs-on: ubuntu-latest
     steps:
-    -name: message1
-      run: echo "this is message1"
-    -name: message2
-      run: echo "this is message2"
+      -name: message1
+       run: echo "this is message1"
+      -name: message2
+       run: echo "this is message2"
