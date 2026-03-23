@@ -32,7 +32,7 @@ targets:
       mode: production
       variables:
         catalog:
-        default: "citibike_test"
+         default: "citibike_test"
         dev_flag:
          default: false
       presets:
