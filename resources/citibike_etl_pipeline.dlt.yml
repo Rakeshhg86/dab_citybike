@@ -2,6 +2,10 @@ resources:
   pipelines:
     pipeline_citibike_etl_pipeline:
       name: citibike_etl_pipeline
+      #run_as:
+        # Use exactly one of the options below:
+        #user_name: "rakesh_nlp_outlook.com#ext#@rakeshnlpoutlook.onmicrosoft.com"
+        #service_principal_name: e5dabfef-95fb-4ff4-9a2f-bebc02f3eb63
       configuration:
         catalog: "${var.catalog}"
       libraries:
