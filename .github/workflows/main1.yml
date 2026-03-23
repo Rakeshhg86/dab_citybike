@@ -30,15 +30,21 @@ jobs:
       - name: Install uv
         run: |
                 curl -LsSf https://astral.sh/uv/install.sh | sh
-                echo "$HOME/.local/bin" >> $GITHUB_PATH
-   
+                echo "$HOME/.local/bin" >> $GITHUB_PATH   
 
-      - name: Run pytest & generate HTML report
+      # (optional but recommended) create a venv and sync dev deps
+      - name: Sync dependencies
         run: |
-          pytest \
+          uv venv .venv
+          uv sync --dev
+
+      - name: Run tests with coverage via uv
+        run: |
+          uv run pytest \
             --disable-warnings \
             --cov=./src \
             --cov-report=html
+
 
       - name: Upload coverage HTML report
         uses: actions/upload-artifact@v4
