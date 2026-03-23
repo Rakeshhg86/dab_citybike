@@ -2,9 +2,10 @@ resources:
   jobs:
     citibike_etl_pipeline_nb:
       name: citibike_etl_pipeline_nb  
-      run_as:
+      #run_as:
         # Use exactly one of the options below:
-        user_name: "rakesh_nlp_outlook.com#ext#@rakeshnlpoutlook.onmicrosoft.com"
+        #user_name: "rakesh_nlp_outlook.com#ext#@rakeshnlpoutlook.onmicrosoft.com"
+        #service_principal_name: e5dabfef-95fb-4ff4-9a2f-bebc02f3eb63
       tasks:
         - task_key: 00_whl_upload
           python_wheel_task:

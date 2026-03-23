@@ -22,3 +22,8 @@ targets:
     default: true
     workspace:
       host: https://adb-7405617671970223.3.azuredatabricks.net
+    permissions:
+      - service_principal_name: e5dabfef-95fb-4ff4-9a2f-bebc02f3eb63
+        level : CAN_MANAGE
+    run_as:
+      service_principal_name: e5dabfef-95fb-4ff4-9a2f-bebc02f3eb63
