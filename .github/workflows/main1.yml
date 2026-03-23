@@ -27,23 +27,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-pyspark.txt
        
-      - name: Install uv
+      
+      - name: Install dev dependencies
         run: |
-                curl -LsSf https://astral.sh/uv/install.sh | sh
-                echo "$HOME/.local/bin" >> $GITHUB_PATH   
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov
+          
+      - name: Run tests
+        run: |
+          pytest --disable-warnings --cov=./src --cov-report=html
 
-      # (optional but recommended) create a venv and sync dev deps
-      - name: Sync dependencies
-        run: |
-          uv venv .venv
-          uv sync --dev
-
-      - name: Run tests with coverage via uv
-        run: |
-          uv run pytest \
-            --disable-warnings \
-            --cov=./src \
-            --cov-report=html
 
 
       - name: Upload coverage HTML report
