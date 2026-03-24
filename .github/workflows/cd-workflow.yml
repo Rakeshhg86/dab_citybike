@@ -71,7 +71,7 @@ jobs:
 
       - name: Configure Databricks
         run: |
-          # write out the profile (here called "TEST")
+          # write out the profile (here called "TEST1")
           cat <<EOF > ~/.databrickscfg
           [TEST]
           host = https://adb-7405605925020159.19.azuredatabricks.net
