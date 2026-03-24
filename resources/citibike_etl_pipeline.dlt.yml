@@ -1,0 +1,24 @@
+resources:
+  pipelines:
+    pipeline_citibike_etl_pipeline:
+      name: citibike_etl_pipeline
+      #run_as:
+        # Use exactly one of the options below:
+        #user_name: "rakesh_nlp_outlook.com#ext#@rakeshnlpoutlook.onmicrosoft.com"
+        #service_principal_name: e5dabfef-95fb-4ff4-9a2f-bebc02f3eb63
+      configuration:
+        catalog: "${var.catalog}"
+      libraries:
+        - notebook:
+            path: ../citibike_etl/dlt/01_bronze/01_bronze_citibike.ipynb
+        - notebook:
+            path: ../citibike_etl/dlt/02_silver/02_silver_citibike.ipynb
+        - notebook:
+            path: ../citibike_etl/dlt/03_gold/03_gold_citibike_daily_ride_summary.ipynb
+        - notebook:
+            path: ../citibike_etl/dlt/03_gold/03_gold_citibike_daily_station_performance.ipynb
+      schema: default
+      development: "${var.dev_flag}"
+      photon: true
+      catalog: "${var.catalog}"
+      serverless: true
