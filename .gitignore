@@ -5,6 +5,7 @@ __pycache__/
 *.egg-info
 .venv/
 .venv_pyspark/
+.venv_pysprk/
 scratch/**
 !scratch/README.md
 **/explorations/**

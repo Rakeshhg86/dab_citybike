@@ -23,6 +23,6 @@ def test_get_trip_duration_mins(spark):
     results = result_df.select("trip_duration_mins").collect()
     
     # Assert that the differences are as expected
-    #assert results[0]["trip_duration_mins"] == 10
-    #assert results[1]["trip_duration_mins"] == 30
-    assert 1 == 1
+    assert results[0]["trip_duration_mins"] == 10
+    assert results[1]["trip_duration_mins"] == 30
+    #assert 1 == 1

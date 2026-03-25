@@ -1,12 +1,12 @@
 name: CD Workflow
 
+
 on:
-  push:
-    branches:
-      - 'feature1**'
-  pull_request:
-    branches:
-      - 'main'
+  workflow_run:
+    workflows: ["CI Workflow"]
+    types:
+      - completed
+
 
 jobs:
   cd-deploy-dev:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Configure Databricks
         run: |
-          # write out the profile (here called "dev")
+          # write out the profile (here called "dev1")
           cat <<EOF > ~/.databrickscfg
           [DEV]
           host = https://adb-7405617671970223.3.azuredatabricks.net

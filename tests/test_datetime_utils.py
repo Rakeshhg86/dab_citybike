@@ -18,5 +18,5 @@ def test_timestamp_to_date_col(spark):
 
     expected_date = datetime.date(2025, 4, 10)  # Expected: 2025-04-10
 
-    #assert row["ride_date"] == expected_date
-    assert 1 == 1
+    assert row["ride_date"] == expected_date
+    #assert 1 == 1
